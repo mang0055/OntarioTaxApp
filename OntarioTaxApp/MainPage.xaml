@@ -6,36 +6,31 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <VisualStateManager.VisualStateGroups>
-
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
         <VisualStateGroup>
-
             <VisualState x:Name="wideState">
-
                 <VisualState.StateTriggers>
-
                     <AdaptiveTrigger MinWindowWidth="359"/>
-
                 </VisualState.StateTriggers>
-
+                <VisualState.Setters>
+                        
+                </VisualState.Setters>
             </VisualState>
+            
             <VisualState x:Name="narrowState">
                 <VisualState.StateTriggers>
                     <AdaptiveTrigger MinWindowWidth="0"/>
-
                 </VisualState.StateTriggers>
-
                 <VisualState.Setters>
                     <Setter Target="purchaseAmountStackPanel.Orientation" Value="Vertical"/>
-
-                </VisualState.Setters>
-
+                    <Setter Target="backgroundImage.Visiblity" Value="Collapsed"/>
+                    </VisualState.Setters>
             </VisualState>
-
         </VisualStateGroup>
 
     </VisualStateManager.VisualStateGroups>
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+   
         <Grid.RowDefinitions>
             <RowDefinition Height=".1*"></RowDefinition>
             <RowDefinition Height=".1*"></RowDefinition>
@@ -50,9 +45,6 @@
                     VerticalAlignment="Top"
                     Grid.Row="2"
                     >
-            <StackPanel.Background>
-                <ImageBrush ImageSource="Assets/tax_cal_image.jpg"></ImageBrush>
-            </StackPanel.Background>
             <StackPanel Name="purchaseAmountStackPanel"
                         Orientation="Horizontal"
                         >
@@ -138,7 +130,8 @@
                            FontSize="36" ToolTipService.ToolTip="The total cost of your purchase including tax"/>
            
         </StackPanel>
-        
+        <Image x:Name="backgroundImage" HorizontalAlignment="Left" Height="100" Margin="671,149,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100" Source="Assets/tax_cal_image.png"/>
+
     </Grid>
     
 </Page>
